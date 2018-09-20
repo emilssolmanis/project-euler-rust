@@ -10,8 +10,8 @@ impl Primes {
     fn is_prime(&self, i: u64) -> bool {
         let test_up_to: u64 = (i as f64).sqrt().ceil() as u64;
 
-        for prime in self.previous.iter().take_while(|i| **i <= test_up_to) {
-            if i % *prime == 0 {
+        for &prime in self.previous.iter().take_while(|&&i| i <= test_up_to) {
+            if i % prime == 0 {
                 return false;
             };
         };
@@ -44,7 +44,7 @@ impl Iterator for Primes {
 
 pub fn solve(num: u64) -> u64 {
     Primes::new()
-        .take_while(|p| *p <= (num as f64).sqrt().ceil() as u64)
+        .take_while(|&p| p <= (num as f64).sqrt().ceil() as u64)
         .filter(|p| num % p == 0)
         .last()
         .unwrap()

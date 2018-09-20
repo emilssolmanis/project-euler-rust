@@ -24,14 +24,14 @@ impl Iterator for Fibo {
 }
 
 pub fn solve(up_to: u32) -> u32 {
-    Fibo::new().take_while(|i| *i < up_to).filter(|i| i % 2 == 0).sum()
+    Fibo::new().take_while(|&i| i < up_to).filter(|i| i % 2 == 0).sum()
 }
 
 #[cfg(test)]
 mod tests {
     #[test]
     fn problem_2() {
-        let res: Vec<u32> = super::Fibo::new().take_while(|i| *i < 10u32).collect();
+        let res: Vec<u32> = super::Fibo::new().take_while(|&i| i < 10u32).collect();
 
         assert_eq!(
             res,
