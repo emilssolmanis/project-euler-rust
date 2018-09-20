@@ -8,4 +8,6 @@ fn main() {
     println!("problem 3: {}", solutions::problem_3::solve(600851475143));
     println!("problem 4: {}", solutions::problem_4::solve());
     println!("problem 5: {}", solutions::problem_5::solve(20));
+    println!("problem 6: {}", solutions::problem_6::solve(100));
+    println!("problem 7: {}", solutions::problem_7::solve(10_000));
 }
