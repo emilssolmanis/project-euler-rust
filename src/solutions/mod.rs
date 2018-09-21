@@ -16,3 +16,4 @@ pub mod problem_14;
 pub mod problem_15;
 pub mod problem_16;
 pub mod problem_17;
+pub mod problem_18;
