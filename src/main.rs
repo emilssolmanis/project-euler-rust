@@ -19,4 +19,5 @@ fn main() {
     println!("problem 14: {}", solutions::problem_14::solve());
     println!("problem 15: {}", solutions::problem_15::solve(20, 20));
     println!("problem 16: {}", solutions::problem_16::solve(1000));
+    println!("problem 17: {}", solutions::problem_17::solve(1000));
 }
