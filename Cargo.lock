@@ -1,4 +1,32 @@
 [[package]]
+name = "gmp-mpfr-sys"
+version = "1.1.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.43"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "rug"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "gmp-mpfr-sys 1.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "rust-fuckery"
 version = "0.1.0"
+dependencies = [
+ "rug 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
+[metadata]
+"checksum gmp-mpfr-sys 1.1.8 (registry+https://github.com/rust-lang/crates.io-index)" = "12771286fb4e66478363d01431d692444d72ac54fa63ec1d0337105fa0160380"
+"checksum libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)" = "76e3a3ef172f1a0b9a9ff0dd1491ae5e6c948b94479a3021819ba7d860c8645d"
+"checksum rug 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "5e0ee6c8aa0f8c10a993463e5fbf2f3613d474e0dc58f8524c40310eaf2539b9"
