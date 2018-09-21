@@ -16,4 +16,5 @@ fn main() {
     println!("problem 11: {}", solutions::problem_11::solve());
     println!("problem 12: {}", solutions::problem_12::solve(500));
     println!("problem 13: {}", solutions::problem_13::solve("resources/problem_13.dat"));
+    println!("problem 14: {}", solutions::problem_14::solve());
 }
