@@ -20,5 +20,6 @@ fn main() {
     println!("problem 15: {}", solutions::problem_15::solve(20, 20));
     println!("problem 16: {}", solutions::problem_16::solve(1000));
     println!("problem 17: {}", solutions::problem_17::solve(1000));
-    println!("problem 17: {}", solutions::problem_18::solve("resources/problem_18.dat"));
+    println!("problem 18: {}", solutions::problem_18::solve("resources/problem_18.dat"));
+    println!("problem 19: {}", solutions::problem_19::solve());
 }
