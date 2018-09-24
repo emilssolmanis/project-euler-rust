@@ -1,12 +1,6 @@
 use rug::Integer;
+use super::common::factorial;
 
-fn factorial(x: u64) -> Integer {
-    let mut res = Integer::from(1);
-    for i in 1..=x {
-        res *= Integer::from(i);
-    }
-    res
-}
 
 pub fn solve(rows: u64, cols: u64) -> Integer {
     factorial(rows + cols) / (factorial(rows) * factorial(cols))

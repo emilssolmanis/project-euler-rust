@@ -1,11 +1,11 @@
 use rug::Integer;
+use super::common::ToDigits;
 
 pub fn solve(pow: u32) -> u32 {
     let res = Integer::from(Integer::u_pow_u(2, pow));
-    res.to_string()
-        .as_bytes()
+    res.to_individual_digits()
         .iter()
-        .map(|&b| b as u32 - 48)
+        .map(|&b| b - 48)
         .sum()
 }
 
