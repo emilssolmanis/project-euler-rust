@@ -24,6 +24,20 @@ impl ToDigits for Integer {
     }
 }
 
+pub trait Factors {
+    type Item;
+
+    fn factors(&self) -> Vec<Self::Item>;
+}
+
+impl Factors for u64 {
+    type Item = u64;
+
+    fn factors(&self) -> Vec<Self::Item> {
+        (1..*self).filter(|&i| self % i == 0).collect()
+    }
+}
+
 pub struct Primes {
     previous: Vec<u64>
 }
@@ -81,5 +95,16 @@ mod tests {
     #[test]
     fn test_factorial() {
         assert_eq!(Integer::from(120), factorial(5));
+    }
+
+    #[test]
+    fn test_str_digits() {
+        assert_eq!("1234321".to_individual_digits(), vec![1, 2, 3, 4, 3, 2, 1]);
+    }
+
+    #[test]
+    fn test_factors() {
+        assert_eq!(220.factors(), vec![1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]);
+        assert_eq!(284.factors(), vec![1, 2, 4, 71, 142]);
     }
 }
