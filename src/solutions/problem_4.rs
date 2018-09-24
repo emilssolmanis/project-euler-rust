@@ -13,11 +13,11 @@ impl Iterator for Product {
     type Item = u32;
 
     fn next(&mut self) -> Option<<Self as Iterator>::Item> {
-        self.j = self.j - 1;
+        self.j -= 1;
 
         if self.j < 100 {
             self.j = 999;
-            self.i = self.i - 1;
+            self.i -= 1;
 
             if self.i < 100 {
                 return None;
@@ -67,7 +67,7 @@ mod tests {
     #[test]
     fn palindrome() {
         assert!(is_palindrome(9009));
-        assert!(is_palindrome(1234321));
+        assert!(is_palindrome(1_234_321));
 
         assert!(!is_palindrome(9001));
     }

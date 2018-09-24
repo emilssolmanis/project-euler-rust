@@ -4,27 +4,27 @@ const TENS: [&str; 10] = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixt
 
 fn format(x: u64) -> String {
     if x < 10 {
-        return String::from(ONES[x as usize]);
+        String::from(ONES[x as usize])
     } else if x >= 10 && x < 20 {
-        return String::from(TEENS[(x % 10) as usize]);
+        String::from(TEENS[(x % 10) as usize])
     } else if x < 100 {
         let tens = x / 10;
         let ones = x % 10;
         if ones == 0 {
-            return String::from(TENS[tens as usize]);
+            String::from(TENS[tens as usize])
         } else {
-            return format!("{}-{}", TENS[tens as usize], ONES[ones as usize]);
+            format!("{}-{}", TENS[tens as usize], ONES[ones as usize])
         }
     } else if x < 1000 {
         let hundreds = x / 100;
         let remainder = x % 100;
         if remainder == 0 {
-            return format!("{} hundred", ONES[hundreds as usize]);
+            format!("{} hundred", ONES[hundreds as usize])
         } else {
-            return format!("{} hundred and {}", ONES[hundreds as usize], format(remainder));
+            format!("{} hundred and {}", ONES[hundreds as usize], format(remainder))
         }
     } else {
-        return String::from("one thousand");
+        String::from("one thousand")
     }
 }
 

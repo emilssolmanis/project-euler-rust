@@ -10,7 +10,7 @@ pub fn solve(slice_len: usize) -> u64 {
 
     for i in 0..(byte_vec.len() - slice_len) {
         let curr_slice = &byte_vec[i..(i + slice_len)];
-        let curr_prod: u64 = curr_slice.iter().map(|&b| b as u64).product();
+        let curr_prod: u64 = curr_slice.iter().map(|&b| u64::from(b)).product();
         largest = max(largest, curr_prod);
     }
 

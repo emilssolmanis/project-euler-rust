@@ -22,7 +22,7 @@ impl Iterator for TriangleNumbers {
     }
 }
 
-fn factorize(i: u64, primes: &Vec<u64>) -> BTreeMap<u64, u64> {
+fn factorize(i: u64, primes: &[u64]) -> BTreeMap<u64, u64> {
     let mut factors = BTreeMap::new();
     let mut remainder = i;
 
@@ -46,7 +46,7 @@ fn factorize(i: u64, primes: &Vec<u64>) -> BTreeMap<u64, u64> {
     factors
 }
 
-fn num_factors(i: u64, primes: &Vec<u64>) -> u64 {
+fn num_factors(i: u64, primes: &[u64]) -> u64 {
     let factors = factorize(i, primes);
 
     let mut num_divisors = 0;

@@ -1,7 +1,7 @@
 use super::common::Primes;
 
 pub fn solve(n: usize) -> u64 {
-    Primes::new().skip(n).next().unwrap()
+    Primes::new().nth(n).unwrap()
 }
 
 #[cfg(test)]

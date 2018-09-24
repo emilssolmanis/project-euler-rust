@@ -18,7 +18,7 @@ impl Iterator for Fibo {
     fn next(&mut self) -> Option<<Self as Iterator>::Item> {
         let existing_prev = self.prev;
         self.prev = self.curr;
-        self.curr = existing_prev + self.curr;
+        self.curr += existing_prev;
         Some(existing_prev)
     }
 }

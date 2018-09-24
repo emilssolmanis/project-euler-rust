@@ -14,7 +14,7 @@ pub trait ToDigits {
 
 impl ToDigits for str {
     fn to_individual_digits(&self) -> Vec<u32> {
-        self.as_bytes().iter().map(|&b| b as u32 - 48).collect()
+        self.as_bytes().iter().map(|&b| u32::from(b) - 48).collect()
     }
 }
 

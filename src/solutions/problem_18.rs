@@ -12,7 +12,7 @@ impl Triangle {
         let penultimate_row = self.rows.last_mut().unwrap();
 
         for (idx, num) in penultimate_row.iter_mut().enumerate() {
-            *num = *num + max(bottom_row[idx], bottom_row[idx + 1]);
+            *num += max(bottom_row[idx], bottom_row[idx + 1]);
         };
     }
 
@@ -21,7 +21,7 @@ impl Triangle {
             self.collapse_row();
         }
 
-        return self.rows[0][0];
+        self.rows[0][0]
     }
 }
 
