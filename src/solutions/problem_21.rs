@@ -57,6 +57,6 @@ mod tests {
         let mut expected: HashSet<u64> = HashSet::new();
         expected.extend(vec![220, 284, 1184, 1210, 2620, 2924, 5020, 5564, 6232, 6368]);
 
-        assert_eq!(get_amicables_under(1000), expected);
+        assert_eq!(get_amicables_under(10_000), expected);
     }
 }

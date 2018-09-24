@@ -5,7 +5,6 @@ pub fn solve(pow: u32) -> u32 {
     let res = Integer::from(Integer::u_pow_u(2, pow));
     res.to_individual_digits()
         .iter()
-        .map(|&b| b - 48)
         .sum()
 }
 

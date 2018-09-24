@@ -1,5 +1,30 @@
 use rug::Integer;
 
+pub struct Fibo {
+    prev: Integer,
+    curr: Integer,
+}
+
+impl Fibo {
+    pub fn new() -> Fibo {
+        Fibo {
+            prev: Integer::from(0),
+            curr: Integer::from(1),
+        }
+    }
+}
+
+impl Iterator for Fibo {
+    type Item = Integer;
+
+    fn next(&mut self) -> Option<<Self as Iterator>::Item> {
+        let existing_prev = self.prev.clone();
+        self.prev = self.curr.clone();
+        self.curr += existing_prev.clone();
+        Some(existing_prev)
+    }
+}
+
 pub fn factorial(x: u64) -> Integer {
     let mut res = Integer::from(1);
     for i in 1..=x {
@@ -106,5 +131,14 @@ mod tests {
     fn test_factors() {
         assert_eq!(220.factors(), vec![1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]);
         assert_eq!(284.factors(), vec![1, 2, 4, 71, 142]);
+    }
+
+    #[test]
+    fn test_fibo() {
+        let res: Vec<Integer> = Fibo::new().take_while(|i| i < &10).collect();
+
+        assert_eq!(
+            res,
+            vec![0, 1, 1, 2, 3, 5, 8]);
     }
 }
