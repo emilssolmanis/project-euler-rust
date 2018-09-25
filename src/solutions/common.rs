@@ -1,4 +1,5 @@
 use rug::Integer;
+use std::collections::HashSet;
 
 pub struct Fibo {
     prev: Integer,
@@ -107,6 +108,22 @@ impl Iterator for Primes {
     }
 }
 
+pub struct PrimeChecker {
+    primes: HashSet<u64>
+}
+
+impl PrimeChecker {
+    pub fn new(max_prime: u64) -> PrimeChecker {
+        PrimeChecker {
+            primes: Primes::new().take_while(|&p| p < max_prime).collect(),
+        }
+    }
+
+    pub fn prime(&self, x: u64) -> bool {
+        self.primes.contains(&x)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -140,5 +157,15 @@ mod tests {
         assert_eq!(
             res,
             vec![0, 1, 1, 2, 3, 5, 8]);
+    }
+
+    #[test]
+    fn test_prime_checker() {
+        let pc = PrimeChecker::new(30);
+
+        assert!(pc.prime(7));
+        assert!(!pc.prime(8));
+        assert!(pc.prime(7));
+        assert!(!pc.prime(26))
     }
 }
