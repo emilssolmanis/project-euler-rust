@@ -16,7 +16,7 @@ fn read_name_list(filename: &str) -> Vec<String> {
     contents.split(',').map(|s: &str| s.replace('"', "")).collect()
 }
 
-fn score_list(names: Vec<String>) -> u32 {
+fn score_list(names: &[String]) -> u32 {
     let mut res: u32 = 0;
 
     for (idx, name) in names.iter().enumerate() {
@@ -30,7 +30,7 @@ pub fn solve(filename: &str) -> u32 {
     let mut name_list = read_name_list(filename);
     name_list.sort();
 
-    score_list(name_list)
+    score_list(name_list.as_slice())
 }
 
 #[cfg(test)]
@@ -45,10 +45,10 @@ mod tests {
 
     #[test]
     fn test_score_list() {
-        assert_eq!(score_list(vec![String::from("ALICE"),
-                                   String::from("BOB"),
-                                   String::from("COLIN")]),
-                   1 * compute_score("ALICE")
+        assert_eq!(score_list(&[String::from("ALICE"),
+            String::from("BOB"),
+            String::from("COLIN")]),
+                   compute_score("ALICE")
                        + 2 * compute_score("BOB")
                        + 3 * compute_score("COLIN"));
     }

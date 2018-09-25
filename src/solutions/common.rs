@@ -152,7 +152,7 @@ mod tests {
 
     #[test]
     fn test_fibo() {
-        let res: Vec<Integer> = Fibo::new().take_while(|i| i < &10).collect();
+        let res: Vec<Integer> = Fibo::new().take_while(|i| *i < 10).collect();
 
         assert_eq!(
             res,

@@ -16,13 +16,13 @@ fn length_of_prime_seq(a: i32, b: i32, pc: &PrimeChecker) -> i32 {
 }
 
 pub fn solve() -> i32 {
-    let mut pc = PrimeChecker::new(100_000_000);
+    let pc = PrimeChecker::new(100_000_000);
     let mut max_len = 0;
     let mut res = 0;
 
     for a in -999..1000 {
         for b in -1000..=1000 {
-            let l = length_of_prime_seq(a, b, &mut pc);
+            let l = length_of_prime_seq(a, b, &pc);
             if l > max_len {
                 max_len = l;
                 res = a * b;
