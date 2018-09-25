@@ -39,7 +39,7 @@ mod tests {
 
     #[test]
     fn test_it() {
-        let pc = PrimeChecker::new(10_000_000);
+        let pc = PrimeChecker::new(10_000);
 
         assert_eq!(length_of_prime_seq(1, 41, &pc), 40);
         assert_eq!(length_of_prime_seq(-79, 1601, &pc), 80);

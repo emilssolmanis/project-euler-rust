@@ -29,8 +29,9 @@ fn main() {
 //        "disabled, it's kinda slow"
 //    solutions::problem_23::solve()
 //    );
-    println!("problem 24: {}", solutions::problem_24::solve());
-    println!("problem 25: {}", solutions::problem_25::solve(1000));
-    println!("problem 26: {}", solutions::problem_26::solve(1000));
-    println!("problem 27: {}", solutions::problem_27::solve());
+//    println!("problem 24: {}", solutions::problem_24::solve());
+//    println!("problem 25: {}", solutions::problem_25::solve(1000));
+//    println!("problem 26: {}", solutions::problem_26::solve(1000));
+//    println!("problem 27: {}", solutions::problem_27::solve());
+    println!("problem 28: {}", solutions::problem_28::solve(1001));
 }
